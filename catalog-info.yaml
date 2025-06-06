@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: xn32lsb8c-python-gitops
+  description: This is GitOps manifest for xn32lsb8c-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=xn32lsb8c-python
+    backstage.io/kubernetes-id: xn32lsb8c-python 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: xn32lsb8c-python-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:xn32lsb8c-python
